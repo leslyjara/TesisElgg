@@ -99,6 +99,7 @@ $fecha_label= elgg_echo('actividad:date');
 $fecha_input = elgg_view_field([
     '#type' => 'select',
     'name' => 'conFecha',
+    'id' => 'conFecha',
     'options_values' => array('on' => elgg_echo('actividad:on'), 'off' => elgg_echo('actividad:off')),     
 	'value'=> $conFecha,
 ]);
@@ -126,7 +127,8 @@ ___HTML;
 $date= elgg_view_field([
     '#type' => 'date',
     '#label' => elgg_echo('actividad:endDate'),
-    'name' => 'fecha',  
+    'name' => 'fecha', 
+    'id' => 'fecha', 
     'required' => false,
     'value'=> $fecha,
 ]);
@@ -135,6 +137,7 @@ $hora= elgg_view_field([
     '#type' => 'select',
     '#label' => elgg_echo('actividad:hour'),
     'name' => 'hora',
+    'id' => 'hora',
     'value' => $hora,
     'options_values' => array(                
 		'01' => '01',
@@ -180,6 +183,7 @@ $minuto= elgg_view_field([
     '#type' => 'select',
     '#label' => elgg_echo('actividad:minute'),
     'name' => 'minuto',
+    'id' => 'minuto',
     'value' => $minuto,
 	'options_values' => $min// range(0,59),  
     

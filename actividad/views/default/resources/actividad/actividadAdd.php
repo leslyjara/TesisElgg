@@ -1,3 +1,9 @@
+<style>
+   select#hora,select#minuto {
+      width: auto;
+   }
+
+</style>
 <?php
 // asegurarse que le usuario inicio sesion
 gatekeeper();
@@ -47,3 +53,34 @@ if(elgg_get_logged_in_user_guid() == $group->getOwnerEntity()->guid ){
 }
 
 ?>
+
+<script type="text/javascript">
+
+
+let FechaEstado =  document.getElementById("conFecha");
+let fecha =  document.getElementById("fecha");
+let hora =  document.getElementById("hora");
+let minuto =  document.getElementById("minuto");
+
+
+FechaEstado.addEventListener("change", (event) => {
+   var valor =FechaEstado.value;
+   if(valor == "off")  {
+      fecha.disabled = true;
+      hora.disabled = true;
+      minuto.disabled = true;
+
+      fecha.value = "";
+      hora.value = "";
+      minuto.value = "";
+   } else{
+      fecha.disabled = false;
+      hora.disabled = false;
+      minuto.disabled = false;
+   }
+});
+
+
+
+</script>
+
